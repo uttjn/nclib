@@ -498,6 +498,9 @@ class Netcat(object):
 
         Aliases: write, put, sendall, send_all
         """
+        if type(s) is str:
+            s = s.encode()
+        
         if self.verbose and self.echo_headers:
             print('======== Sending ({0}) ========'.format(len(s)))
 
